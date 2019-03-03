@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::view('/home', 'home');
@@ -49,3 +45,5 @@ Route::group(['prefix' => '/sub-criterion', 'as' => 'sub-criterion.'], function(
 Route::group(['prefix' => '/survey-form', 'as' => 'survey-form.'], function() {
     Route::get('/show', 'SurveyFormController@show')->name('show');
 });
+
+Route::redirect('/', '/type/index');
