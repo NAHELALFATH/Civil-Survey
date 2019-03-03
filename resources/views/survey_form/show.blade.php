@@ -6,14 +6,23 @@
     use App\Enums\ResponseLevel;
 @endphp
 
-<div class="container p-x:5 m-y:5">
+<div class="m-b:5">
     @include('shared.message')
-    <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li> <a href="#"> {{ config('app.name') }} </a> </li>
-            <li class="is-active"><a href="{{ route('survey-form.show') }}" aria-current="page"> Formulir Survey </a></li>
-        </ul>
-    </nav>
+    
+    <div class="box">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+                <li class="is-active">
+                    <a href="#"> Formulir Survey </a>
+                </li>
+                <li class="is-active">
+                    <a href="{{ route('survey-form.show', ['respondent_type' => $respondent_type]) }}" aria-current="page">
+                        {{ App\Enums\RespondentType::NAMES[$respondent_type] }}
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
     <h1 class="title is-1">
         FORMULIR SURVEY
@@ -22,7 +31,6 @@
         {{ App\Enums\RespondentType::NAMES[$respondent_type] }}
     </h2>
     <hr>
-
 
     @foreach ($types as $type)
     <div class="m-b:8">

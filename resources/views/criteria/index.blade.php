@@ -2,7 +2,7 @@
 @section('title', 'Manajemen Kriteria')
 @section('content')
 
-<div class="container p-x:5 m-y:5">
+<div class="m-b:5">
     @include('shared.message')
     <nav class="breadcrumb box" aria-label="breadcrumbs">
         <ul>

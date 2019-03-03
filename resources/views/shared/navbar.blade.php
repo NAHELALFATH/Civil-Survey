@@ -1,7 +1,7 @@
 <nav class="navbar has-shadow is-dark" role="navigation" aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand">
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="sidebar">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
