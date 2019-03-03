@@ -4,13 +4,27 @@
 
 <div class="container p-x:5 m-y:5">
     @include('shared.message')
-    <nav class="breadcrumb" aria-label="breadcrumbs">
+    <nav class="breadcrumb box" aria-label="breadcrumbs">
         <ul>
-            <li> <a href="#"> {{ config('app.name') }} </a> </li>
-            <li> <a href="{{ route('type.index') }}"> Manajemen Tipe </a> </li>
+            <li class="is-active">
+                <a href="#">
+                    Master Data
+                </a>
+            </li>
+
+            <li class="is-active">
+                <a href="">
+                    {{ App\Enums\RespondentType::NAMES[$criterion->type->respondent_type] }}
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ route('type.index', ['respondent_type' => $criterion->type->respondent_type]) }}">
+                    Tipe {{ $criterion->type->name }} </a>
+            </li>
             <li>
                 <a href="{{ route('criterion.index', $criterion->type_id) }}" aria-current="page">
-                    Manajemen Kriteria
+                    Kriteria {{ $criterion->name }}
                 </a>
             </li>
             <li class="is-active">

@@ -2,9 +2,15 @@
 
 use Illuminate\Database\Seeder;
 use App\Type;
+use App\Enums\RespondentType;
 
 class TypeSeeder extends Seeder
 {
+    const TYPES = [
+        "Kepentingan",
+        "Keberlanjutan"
+    ];
+
     /**
      * Run the database seeds.
      *
@@ -12,7 +18,15 @@ class TypeSeeder extends Seeder
      */
     public function run()
     {
-        Type::create(['name' => 'Kepentingan']);
-        Type::create(['name' => 'Keberlanjutan']);
+        DB::transaction(function() {
+            foreach (RespondentType::toArray() as $respondent_type) {
+                foreach (self::TYPES as $type) {
+                    Type::create([
+                        'respondent_type' => $respondent_type,
+                        'name' => $type,
+                    ]);
+                }
+            }
+        });
     }
 }

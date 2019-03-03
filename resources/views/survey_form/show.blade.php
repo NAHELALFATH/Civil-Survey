@@ -18,6 +18,9 @@
     <h1 class="title is-1">
         FORMULIR SURVEY
     </h1>
+    <h2 class="subtitle">
+        {{ App\Enums\RespondentType::NAMES[$respondent_type] }}
+    </h2>
     <hr>
 
 

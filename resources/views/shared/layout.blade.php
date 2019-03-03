@@ -12,7 +12,7 @@
     @include('shared.navbar')
     
     <aside class="menu p:4" 
-        style="height: 100%; width: 200px; position: fixed"
+        style="height: 100%; width: 300px; position: fixed"
         >
         
         <p class="menu-label">
@@ -20,9 +20,16 @@
         </p>
         <ul class="menu-list">
           <li>
-            <a href="{{ route('type.index') }}">
-              Manajemen
+            @foreach (App\Enums\RespondentType::toArray() as $res_type)
+            <a
+              class="{{
+                Route::is('type.index') && ($res_type == $respondent_type) ?
+                'is-active' : ''
+              }}"
+              href="{{ route('type.index', ['respondent_type' => $res_type]) }}">
+              {{ App\Enums\RespondentType::NAMES[$res_type] }}
             </a>
+            @endforeach
           </li>
         </ul>
 
@@ -32,15 +39,23 @@
 
         <ul class="menu-list">
           <li>
-            <a href="{{ route('survey-form.show') }}">
-              Formulir
+            @foreach (App\Enums\RespondentType::toArray() as $res_type)
+            <a
+              class="{{
+                Route::is('survey-form.show') && ($res_type == $respondent_type) ?
+                'is-active' : ''
+              }}"
+              href="{{ route('survey-form.show', ['respondent_type' => $res_type]) }}"
+              >
+              {{ App\Enums\RespondentType::NAMES[$res_type] }}
             </a>
+            @endforeach
           </li>
         </ul>
 
     </aside>
 
-    <div style="margin-left: 200px">
+    <div style="margin-left: 300px">
         @yield('content')
     </div>
 

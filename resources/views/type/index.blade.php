@@ -4,9 +4,20 @@
 
 <div class="container p-x:5 m-y:5">
     @include('shared.message')
-    <nav class="breadcrumb" aria-label="breadcrumbs">
+    <nav class="breadcrumb box" aria-label="breadcrumbs">
         <ul>
-            <li> <a href="#"> {{ config('app.name') }} </a> </li>
+            <li class="is-active">
+                <a href="#">
+                    Master Data
+                </a>
+            </li>
+
+            <li class="is-active">
+                <a href="">
+                    {{ App\Enums\RespondentType::NAMES[$respondent_type] }}
+                </a>
+            </li>
+
             <li class="is-active"><a href="{{ route('type.index') }}" aria-current="page"> Manajemen Tipe </a></li>
         </ul>
     </nav>

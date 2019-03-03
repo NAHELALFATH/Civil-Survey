@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Type extends Model
 {
     public $fillable = [
-        'name'
+        'respondent_type', 'name'
     ];
 
     public function criteria()
