@@ -358,5 +358,183 @@ return [
                 ],
             ],
         ]
+    ],
+
+    "public_transport_regulator" => [
+        "Tingkat Kepentingan" => [
+            "Ekonomi" => [
+                "GDP per Kapita per Kapasitas Angkut Moda",
+                "Pola Penyelenggaraan dan Pembiayaan Yang Efisien",
+                "Mendukung Industri Lokal",
+                "Pengurangan Biaya Kemacetan per kapita",
+                "Mendukung Peningkatan Ekonomi Wilayah",
+            ],
+
+            "Sosial" => [
+                "Kemampuan Moda Menarik Pengguna Kendaraan Pribadi",
+                "Cakupan Wilayah Pelayanan",
+                "Landmark dan Bentuk Perkotaan serta  Mendukung \"Mix Land Use\"",
+                "Kualitas Sistem Transportasi",
+                "Peningkatan Pelayanan Sosial (Minimasi Dampak Sosial)",
+            ],
+
+            "Lingkungan" => [
+                "Peningkatan Standar Kualitas Lingkungan",
+                "Pengurangan Kecelakaan dan Peningkatan Aspek Kesehatan",
+                "Sustainable Development Support (Mendukung Pola Pembangunan Yang Berbasis Keberlanjutan)",
+                "Pengelolaan SDA khususnya BBM yang Efisien",
+            ],
+
+            "Teknis dan Operasional" => [
+                "Tingkat Okupansi Rata-rata Penumpang Moda Angkutan Massal",
+                "Kemampuan Bersinergi Dengan Moda Lain (multimoda)",
+                "Lama Usia (Durability) Masa Layan Optimal Angkutan",
+                "Penggunaan Teknologi Yang Sesuai Standar Emisi Internasional",
+            ]
+        ],
+
+        "Tingkat Kepentingan" => [
+            "Ekonomi" => [
+                "GDP per Kapita per Kapasitas Angkut Moda" => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+    
+                "Pola Penyelenggaraan dan Pembiayaan Yang Efisien" => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+    
+                "Mendukung Industri Lokal " => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+    
+                "Pengurangan Biaya Kemacetan per kapita" => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+    
+                "Mendukung Peningkatan Ekonomi Wilayah" => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+            ],
+
+            "Sosial" => [
+                "Kemampuan Moda Menarik Pengguna Kendaraan Pribadi " => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+                "Cakupan Wilayah Pelayanan" => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+                "Landmark dan Bentuk Perkotaan" => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+                "Ketersediaan Fasilitas Transportasi Yang Memadai" => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+                "Kemudahan Akses Bagi Masyarakat Ekonomi Rendah dan Penyandang Cacat" => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+            ],
+
+            "Lingkungan" => [
+                "Peningkatan Standar Kualitas Lingkungan " => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+                "Pengurangan Kecelakaan dan Peningkatan Aspek Kesehatan" => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+                "Luas Lahan Per Kapita Untuk Prasarana Transportasi (Mendukung Pemanfaatan Ruang dan Lahan Secara Efisien)" => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+                "Penggunaan Energi Alternatif" => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+            ],
+
+            "Teknis dan Operasional" => [
+                "Tingkat Okupansi Rata-rata Penumpang Moda Angkutan Massal" => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+                "Kemampuan Bersinergi Dengan Moda Lain (multimoda)" => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+                "Lama Usia (Durability) Masa Layan Optimal Angkutan" => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+                "Penggunaan Teknologi Yang Sesuai Standar Emisi Internasional" => [
+                    "Alternatif – 1 (MRT + KA Komuter)",
+                    "Alternatif – 2 (MRT + BRT Jabodetabek)",
+                    "Alternatif – 3 (LRT/Monorel + KA Komuter)",
+                    "Alternatif – 4 (LRT/Monorel + BRT Jabodetabek)",
+                    "Alternatif – 5 (KA Komuter + BRT Jabodetabek)",
+                ],
+            ]
+        ]
     ]
 ];
