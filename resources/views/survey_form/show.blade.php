@@ -2,6 +2,10 @@
 @section('title', 'Formulir Survey')
 @section('content')
 
+@php
+    use App\Enums\ResponseLevel;
+@endphp
+
 <div class="container p-x:5 m-y:5">
     @include('shared.message')
     <nav class="breadcrumb" aria-label="breadcrumbs">
@@ -48,16 +52,18 @@
                     <td rowspan="1"> {{ $sub_criterion->alternatives->first()->name }} </td>
                     <td rowspan="1">
                         <div class="select">
-                            <select name="" id="" class="select">
-                                <option value=""> 1 </option>
-                                <option value=""> 2 </option>
-                                <option value=""> 3 </option>
-                                <option value=""> 4 </option>
-                                <option value=""> 5 </option>
+                            <select name="" id="">
+                                @foreach (ResponseLevel::toArray() as $key => $level)
+                                <option value="{{ $key }}">
+                                    {{ $level }}
+                                </option>
+                                @endforeach
                             </select>
                         </div>
                     </td>
-                    <td rowspan="1">  </td>
+                    <td rowspan="1">
+                        <textarea name="" id="" cols="15" rows="2" class="textarea"></textarea>
+                    </td>
                 </tr>
 
                 @for ($i = 0; $i < $sub_criterion->alternatives->count() - 1; ++$i)
@@ -66,15 +72,19 @@
                     {{-- <td></td> --}}
                     <td> {{ $sub_criterion->alternatives[$i + 1]->name }} </td>
                     <td>
-                        <select name="" id="" class="select">
-                            <option value=""> 1 </option>
-                            <option value=""> 1 </option>
-                            <option value=""> 1 </option>
-                            <option value=""> 1 </option>
-                            <option value=""> 1 </option>
-                        </select>
+                        <div class="select">
+                            <select name="" id="">
+                                @foreach (ResponseLevel::toArray() as $key => $level)
+                                <option value="{{ $key }}">
+                                    {{ $level }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
                     </td>
-                    <td>  </td>
+                    <td>
+                        <textarea name="" id="" cols="15" rows="2" class="textarea"></textarea>
+                    </td>
                 </tr>
                 @endfor
 
