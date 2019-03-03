@@ -23,6 +23,7 @@ class SurveyFormController extends Controller
                 'criteria.sub_criteria:id,name,criterion_id',
                 'criteria.sub_criteria.alternatives:id,name,sub_criterion_id',
             ])
+            ->orderBy("id")
             ->where('types.respondent_type', $respondent_type)
             ->get();
 
