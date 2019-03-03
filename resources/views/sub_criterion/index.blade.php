@@ -1,5 +1,5 @@
 @extends('shared.layout')
-@section('title', 'Manajemen Sub Kriteria')
+@section('title', 'Sub Kriteria')
 @section('content')
 
 <div class="m-b:5">
@@ -19,24 +19,24 @@
             </li>
 
             <li>
-                <a href="{{ route('type.index', ['respondent_type' => $criterion->type->respondent_type]) }}">
+                <a href="{{ route('master.type.index', ['respondent_type' => $criterion->type->respondent_type]) }}">
                     Tipe {{ $criterion->type->name }} </a>
             </li>
             <li>
-                <a href="{{ route('criterion.index', $criterion->type_id) }}" aria-current="page">
+                <a href="{{ route('master.criterion.index', $criterion->type_id) }}" aria-current="page">
                     Kriteria {{ $criterion->name }}
                 </a>
             </li>
             <li class="is-active">
-                <a href="{{ route('sub-criterion.index', $criterion) }}">
-                    Manajemen Sub Kriteria
+                <a href="{{ route('master.criterion.index', $criterion) }}">
+                    Sub Kriteria
                 </a>
             </li>
         </ul>
     </nav>
 
     <h1 class="title">
-        Manajemen Sub Kriteria
+        Sub Kriteria
     </h1>
 
     <table class="table is-bordered">

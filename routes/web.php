@@ -15,7 +15,7 @@ Auth::routes();
 
 Route::view('/home', 'home');
 
-Route::group(['prefix' => '/type', 'as' => 'type.'], function() {
+Route::group(['prefix' => '/type', 'as' => 'master.type.'], function() {
     Route::get('/index', 'TypeController@index')->name('index');
     Route::get('/create', 'TypeController@create')->name('create');
     Route::post('/store', 'TypeController@store')->name('store');
@@ -24,7 +24,7 @@ Route::group(['prefix' => '/type', 'as' => 'type.'], function() {
     Route::post('/delete/{type}', 'TypeController@delete')->name('delete');
 });
 
-Route::group(['prefix' => '/criterion', 'as' => 'criterion.'], function() {
+Route::group(['prefix' => '/criterion', 'as' => 'master.criterion.'], function() {
     Route::get('/{type}/index', 'CriterionController@index')->name('index');
     Route::get('/{type}/create', 'CriterionController@create')->name('create');
     Route::post('/{type}/store', 'CriterionController@store')->name('store');
@@ -33,7 +33,7 @@ Route::group(['prefix' => '/criterion', 'as' => 'criterion.'], function() {
     Route::post('/delete/{criterion}', 'CriterionController@delete')->name('delete');
 });
 
-Route::group(['prefix' => '/sub-criterion', 'as' => 'sub-criterion.'], function() {
+Route::group(['prefix' => '/sub-criterion', 'as' => 'master.sub-criterion.'], function() {
     Route::get('/{criterion}/index', 'SubCriterionController@index')->name('index');
     Route::get('/{criterion}/create', 'SubCriterionController@create')->name('create');
     Route::post('/{criterion}/store', 'SubCriterionController@store')->name('store');

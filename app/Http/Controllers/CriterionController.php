@@ -10,8 +10,9 @@ class CriterionController extends Controller
 {
     public function index(Type $type)
     {
+        $respondent_type = $type->respondent_type;
         $type->load('criteria');
-        return view('criteria.index', compact('type'));
+        return view('criteria.index', compact('type', 'respondent_type'));
     }
     
     public function create()

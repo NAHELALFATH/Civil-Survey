@@ -1,5 +1,5 @@
 @extends('shared.layout')
-@section('title', 'Manajemen Tipe')
+@section('title', 'Tipe')
 @section('content')
 
 <div class="m-b:5">
@@ -18,12 +18,12 @@
                 </a>
             </li>
 
-            <li class="is-active"><a href="{{ route('type.index') }}" aria-current="page"> Manajemen Tipe </a></li>
+            <li class="is-active"><a href="{{ route('master.type.index') }}" aria-current="page"> Tipe </a></li>
         </ul>
     </nav>
 
     <h1 class="title">
-        Manajemen Tipe
+        Tipe
     </h1>
 
     <table class="table is-bordered">
@@ -41,7 +41,7 @@
                 <td> {{ $loop->iteration }}. </td>
                 <td> {{ $type->name }} </td>
                 <td>
-                    <a href="{{ route('criterion.index', $type) }}" class="button is-dark is-small">
+                    <a href="{{ route('master.criterion.index', $type) }}" class="button is-dark is-small">
                         <span>
                             Kriteria
                         </span>
@@ -52,7 +52,7 @@
 
                     <form
                         class="d:i-b"
-                        action="{{ route('type.delete', $type) }}"
+                        action="{{ route('master.type.delete', $type) }}"
                         method="POST"
                     >
                         @csrf
