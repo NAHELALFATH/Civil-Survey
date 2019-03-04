@@ -17,7 +17,7 @@ class FromArraySeeder extends Seeder
     public function run()
     {
         
-        // DB::transaction(function () {
+        DB::transaction(function () {
             $master_data = require(__DIR__ . "/master_data.php");
 
             foreach ($master_data as $respondent_type => $types) {
@@ -70,6 +70,6 @@ class FromArraySeeder extends Seeder
                     }
                 }
             }
-        // });
+        });
     }
 }
