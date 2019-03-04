@@ -11,10 +11,10 @@
 <body>
     @include('shared.navbar')
 
-      <div class="container">
-        <div class="p-x:3 m-t:5 columns">
-          <div class="column is-3 p-x:7" style="position: sticky; top: 0rem">
-          <aside class="menu" id="sidebar" style="position: sticky; top: 2rem">
+      <div class="container m-t:10">
+        <div class="columns">
+          <div class="column is-3 p-r:7" style="position: sticky; top: 0rem">
+          <aside class="menu" id="sidebar" style="position: sticky; top: 6rem">
             <p class="menu-label">
               Master Data
             </p>

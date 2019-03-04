@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => 'Survey Teknik Sipil',
+    'name' => 'Kuesioner Survey Penelitian',
 
     /*
     |--------------------------------------------------------------------------
