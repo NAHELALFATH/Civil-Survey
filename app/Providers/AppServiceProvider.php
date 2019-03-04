@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use App\Enums\RespondentType;
 use App\PublicTransportUserResponse;
+use App\PublicTransportOperatorResponse;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
 
         Relation::morphMap([
             (string) RespondentType::public_transport_user() => PublicTransportUserResponse::class,
+            (string) RespondentType::public_transport_operator_investor() => PublicTransportOperatorResponse::class,
         ]);
 
         // Default paginator

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Response as SurveyResponse;
 use App\PublicTransportUserResponse;
 use App\SurveyData;
+use App\PublicTransportOperatorResponse;
 
 class ResponseController extends Controller
 {
@@ -99,6 +100,16 @@ class ResponseController extends Controller
                 break;
             }
             case RespondentType::public_transport_operator_investor(): {
+                $validator->addRules([
+                    "respondent_occupation" => "required|string",
+                    "is_transport_company_owner" => "required|boolean",
+                    "position_in_company" => "required|string",
+                    "duration_in_business" => "required|gte:1",
+                    "company_monthly_revenue" => "required|gte:1",
+                    "difficulties_in_operation" => "required|string",
+                    "wish_and_recommendations" => "nullable|string",
+                    "desired_types_of_public_transport" => "nullable|string",
+                ]);
                 break;
             }
             case RespondentType::public_transport_regulator(): {
@@ -109,7 +120,7 @@ class ResponseController extends Controller
         $validator->addRules([
             "respondent_name" => "required",
             "respondent_sex" => "required",
-            "respondent_age" => "required",
+            "respondent_age" => "required|numeric|lte:120",
             "respondent_address" => "required",
             "survey_data" => "required",
             "survey_data.*.rating" => "required|string",
@@ -129,6 +140,7 @@ class ResponseController extends Controller
                 "respondent_address",
             ])->toArray());
 
+            $extra_data = null;
             switch ($respondent_type) {
                 case RespondentType::public_transport_user(): {
                     $extra_data = PublicTransportUserResponse::create($data->only([
@@ -140,15 +152,28 @@ class ResponseController extends Controller
                         "desired_public_transport_type",
                         "public_transport_disuse_reason",
                     ])->toArray());
-                    
-                    $survey_response
-                        ->extra_data()
-                        ->associate($extra_data);
-                    
-                    $survey_response->save();
+                    break;
+                }
+                case RespondentType::public_transport_operator_investor(): {
+                    $extra_data = PublicTransportOperatorResponse::create($data->only([
+                        "respondent_occupation",
+                        "is_transport_company_owner",
+                        "position_in_company",
+                        "duration_in_business",
+                        "company_monthly_revenue",
+                        "difficulties_in_operation",
+                        "wish_and_recommendations",
+                        "desired_types_of_public_transport",
+                    ])->toArray());
                     break;
                 }
             }
+
+            $survey_response
+                ->extra_data()
+                ->associate($extra_data);
+                    
+            $survey_response->save();
 
             foreach ($data->get("survey_data") as $survey_datum) {
                 $survey_datum["response_id"] = $survey_response->id;

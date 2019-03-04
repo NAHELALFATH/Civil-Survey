@@ -59,7 +59,7 @@
             <div class="field">
                 <label for="respondent_age" class="label"> Usia: </label>
                 <div class="control">
-                    <input placeholder="Usia" value="{{ old('respondent_age') }}" type="text" name="respondent_age" class="input {{ $errors->first("respondent_age", "is-danger") }}">
+                    <input placeholder="Usia" value="{{ old('respondent_age') }}" type="number" name="respondent_age" class="input {{ $errors->first("respondent_age", "is-danger") }}">
                 </div>
                 @if($errors->has("respondent_age"))
                 <p class="help is-danger"> {{ $errors->first("respondent_age") }} </p>
@@ -107,6 +107,58 @@
                 </div>
                 @if($errors->has("position_in_company"))
                 <p class="help is-danger"> {{ $errors->first("position_in_company") }} </p>
+                @endif
+            </div>
+
+            <div class="field">
+                <label for="duration_in_business" class="label"> Sudah berapa lama dalam usaha angkutan umum?: </label>
+                <div class="control">
+                    <input placeholder="Sudah berapa lama dalam usaha angkutan umum?" value="{{ old('duration_in_business') }}" type="number" name="duration_in_business" class="input {{ $errors->first("duration_in_business", "is-danger") }}">
+                </div>
+                @if($errors->has("duration_in_business"))
+                <p class="help is-danger"> {{ $errors->first("duration_in_business") }} </p>
+                @endif
+            </div>
+
+            <div class="field">
+                <label for="company_monthly_revenue" class="label"> Omset perusahaan rata – rata per bulan.: </label>
+                <div class="control">
+                    <input placeholder="Omset perusahaan rata – rata per bulan." value="{{ old('company_monthly_revenue') }}" type="number" name="company_monthly_revenue" class="input {{ $errors->first("company_monthly_revenue", "is-danger") }}">
+                </div>
+                @if($errors->has("company_monthly_revenue"))
+                <p class="help is-danger"> {{ $errors->first("company_monthly_revenue") }} </p>
+                @endif
+            </div>
+
+            <div class="field">
+                <label for="difficulties_in_operation" class="label"> Sebagai Operator angkutan umum, Kesulitan apa saja yang dihadapi dalam penyelenggaraan angkutan umum? </label>
+                <div class="control">
+                    <input placeholder="Sebagai Operator angkutan umum, Kesulitan apa saja yang dihadapi dalam penyelenggaraan angkutan umum?" value="{{ old('difficulties_in_operation') }}" type="text" name="difficulties_in_operation" class="input {{ $errors->first("difficulties_in_operation", "is-danger") }}">
+                </div>
+                @if($errors->has("difficulties_in_operation"))
+                <p class="help is-danger"> {{ $errors->first("difficulties_in_operation") }} </p>
+                @endif
+            </div>
+
+            <label class="label is-medium m-t:8 m-b:4"> Jika Bapak/Ibu dan Perusahaan Bapak/Ibu berminat dalam penyelenggaraan angkutan umum massal sebagai INVESTOR atau mengembangkan bisnis angkutan umum: </label>
+
+            <div class="field">
+                <label for="wish_and_recommendations" class="label"> Apa harapan, saran dan usul dalam penyelenggaraan angkutan umum? </label>
+                <div class="control">
+                    <textarea placeholder="Apa harapan, saran dan usul dalam penyelenggaraan angkutan umum" type="text" name="wish_and_recommendations" class="textarea {{ $errors->first("wish_and_recommendations", "is-danger") }}">{{ old('wish_and_recommendations') }}</textarea>
+                </div>
+                @if($errors->has("wish_and_recommendations"))
+                <p class="help is-danger"> {{ $errors->first("wish_and_recommendations") }} </p>
+                @endif
+            </div>
+
+            <div class="field">
+                <label for="desired_types_of_public_transport" class="label"> Jenis  angkutan umum yang bagaimana yang harusnya dibangun dari sudut pandang Bapak/Ibu investor dan/atau sebagai operator angkutan umum? </label>
+                <div class="control">
+                    <textarea placeholder="Jenis  angkutan umum yang bagaimana yang harusnya dibangun dari sudut pandang Bapak/Ibu investor dan/atau sebagai operator angkutan umum?" type="text" name="desired_types_of_public_transport" class="textarea {{ $errors->first("desired_types_of_public_transport", "is-danger") }}">{{ old('desired_types_of_public_transport') }}</textarea>
+                </div>
+                @if($errors->has("desired_types_of_public_transport"))
+                <p class="help is-danger"> {{ $errors->first("desired_types_of_public_transport") }} </p>
                 @endif
             </div>
 

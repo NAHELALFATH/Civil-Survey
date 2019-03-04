@@ -12,6 +12,7 @@ Jenis  angkutan umum yang bagaimana yang harusnya dibangun dari sudut pandang Ba
 respondent_occupation
 is_transport_company_owner
 position_in_company
+
 company_monthly_revenue
 difficulties_in_operation
 wish_and_recommendations
