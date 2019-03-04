@@ -32,6 +32,9 @@
     </h2>
     <hr>
 
+    <form method="POST" action="">
+
+    </form>
     @foreach ($types as $type)
     <div class="m-b:8">
         <h2 class="title is-2">

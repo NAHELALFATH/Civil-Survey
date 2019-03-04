@@ -42,10 +42,10 @@
                 @foreach (App\Enums\RespondentType::toArray() as $res_type)
                 <a
                   class="{{
-                    Route::is('survey-form.show') && ($res_type == $respondent_type) ?
+                    Route::is('response.create') && ($res_type == $respondent_type) ?
                     'is-active' : ''
                   }}"
-                  href="{{ route('survey-form.show', ['respondent_type' => $res_type]) }}"
+                  href="{{ route('response.create', ['respondent_type' => $res_type]) }}"
                   >
                   {{ App\Enums\RespondentType::NAMES[$res_type] }}
                 </a>

@@ -21,7 +21,7 @@ class CreateSurveyDatasTable extends Migration
             $table->unsignedInteger('criterion_id');
             $table->unsignedInteger('sub_criterion_id');
             $table->unsignedInteger('alternative_id')->nullable();
-            $table->string('importance_level');
+            $table->string('rating');
 
             $table->foreign('response_id')
                 ->references('id')

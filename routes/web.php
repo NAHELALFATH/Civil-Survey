@@ -46,4 +46,9 @@ Route::group(['prefix' => '/survey-form', 'as' => 'survey-form.'], function() {
     Route::get('/show', 'SurveyFormController@show')->name('show');
 });
 
+Route::group(['prefix' => '/response', 'as' => 'response.'], function() {
+    Route::get('/create', 'ResponseController@create')->name('create');
+    Route::post('/store', 'ResponseController@store')->name('store');
+});
+
 Route::redirect('/', '/type/index');
