@@ -6,6 +6,9 @@ use App\Type;
 use App\Enums\RespondentType;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use App\Response as SurveyResponse;
+use App\PublicTransportUserResponse;
+use App\SurveyData;
 
 class ResponseController extends Controller
 {
@@ -53,9 +56,7 @@ class ResponseController extends Controller
     public function store()
     {
         $respondent_type = $this->getRespondentType();
-
-        // $specific_rules = [];
-
+        
         $validator = Validator::make(request()->all(), []);
 
         switch($respondent_type) {
@@ -104,11 +105,43 @@ class ResponseController extends Controller
             "survey_data.*.alternative_id" => "required"
         ]);
 
-        $validator->validate();
+        $data = collect($validator->validate());
+        
+        DB::transaction(function() use ($data, $respondent_type) {
+            $survey_response = new SurveyResponse($data->only([
+                "respondent_name",
+                "respondent_sex",
+                "respondent_age",
+                "respondent_address",
+            ])->toArray());
 
-        // $validator = Validator::make(request(), array_merge($general_rules, $specific_rules));
-        // $validator->rules
+            switch ($respondent_type) {
+                case RespondentType::public_transport_user(): {
+                    $extra_data = PublicTransportUserResponse::create($data->only([
+                        "respondent_occupation",
+                        "respondent_monthly_revenue",
+                        "is_public_transport_user",
+                        "public_transport_usage_duration",
+                        "public_transport_usage_purpose",
+                        "desired_public_transport_type",
+                        "public_transport_disuse_reason",
+                    ])->toArray());
+                    
+                    $survey_response
+                        ->extra_data()
+                        ->associate($extra_data);
+                    
+                    $survey_response->save();
+                    break;
+                }
+            }
 
+            foreach ($data->get("survey_data") as $survey_datum) {
+                $survey_datum["response_id"] = $survey_response->id;
+                SurveyData::create($survey_datum);
+            }
+        });
 
+        return back();
     }
 }
