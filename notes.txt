@@ -1,25 +1,18 @@
-surveys
+Pekerjaan
+Apakah Anda saat ini adalah Pemilik Usaha Angkutan Umum :  a. Ya  b. Tidak 
 
-kepentingan ekonomi subkri1 alt1 answer
-kepentingan ekonomi subkri2 alt1 ans
-kepentingan ekonomi subkri3 alt1 ans
-kepentingan ekonomi subkri4 alt1 ans
+Jabatan dalam perusahaan
+Sudah berapa lama dalam usaha angkutan umum
+Omset perusahaan rata – rata per bulan
+Sebagai Operator angkutan umum, Kesulitan apa saja yang dihadapi dalam penyelenggaraan angkutan umum : 
+Jika Bapak/Ibu dan Perusahaan Bapak/Ibu berminat dalam penyelenggaraan angkutan umum massal sebagai INVESTOR atau mengembangkan bisnis angkutan umum :  
+Apa harapan, saran dan usul dalam penyelenggaraan angkutan umum : 
+Jenis  angkutan umum yang bagaimana yang harusnya dibangun dari sudut pandang Bapak/Ibu investor dan/atau sebagai operator angkutan umum :
 
-kepentingan sosial 
-
-
-
-
-kepentingan lingkungan
-
-
-
-kepentingan teknis
-
-
-
-keberlanjutan
-
-PENGGUNA ANGKUTAN UMUM
-OPERATOR/INVESTOR ANGKUTAN UMUM
-PEMERINTAH / REGULATOR ANGKUTAN UMUM
+respondent_occupation
+is_transport_company_owner
+position_in_company
+company_monthly_revenue
+difficulties_in_operation
+wish_and_recommendations
+desired_types_of_public_transport

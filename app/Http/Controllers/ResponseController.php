@@ -58,6 +58,7 @@ class ResponseController extends Controller
                 break;
             }
             case RespondentType::public_transport_operator_investor(): {
+                return view('response.public_transport_operator.create', compact('types', 'respondent_type'));
                 break;
             }
             case RespondentType::public_transport_regulator(): {

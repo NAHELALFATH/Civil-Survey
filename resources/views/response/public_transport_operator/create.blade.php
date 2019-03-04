@@ -86,67 +86,30 @@
                 @endif
             </div>
 
-            <div class="field">
-                <label for="respondent_monthly_revenue" class="label"> Tingkat penghasilan rata – rata per bulan: </label>
-                <div class="control">
-                    <input placeholder="Tingkat penghasilan rata – rata per bulan" value="{{ old('respondent_monthly_revenue') }}" type="text" name="respondent_monthly_revenue" class="input {{ $errors->first("respondent_monthly_revenue", "is-danger") }}">
-                </div>
-                @if($errors->has("respondent_monthly_revenue"))
-                <p class="help is-danger"> {{ $errors->first("respondent_monthly_revenue") }} </p>
-                @endif
-            </div>
-
             <hr/>
 
             <div class="field">
-                <label for="is_public_transport_user" class="label"> Pengguna Angkutan Umum: </label>
+                <label for="is_transport_company_owner" class="label">
+                    Apakah Anda saat ini adalah Pemilik Usaha Angkutan Umum:
+                </label>
                 <div class="select">
-                    <select name="is_public_transport_user" id="is_public_transport_user">
-                        <option {{ old('is_public_transport_user') === '1' ? 'selected' : '' }} value="1"> Ya </option>
-                        <option {{ old('is_public_transport_user') === '0' ? 'selected' : '' }} value="0"> Tidak </option>
+                    <select name="is_transport_company_owner" id="is_transport_company_owner">
+                        <option {{ old('is_transport_company_owner') === "1" ? 'selected' : '' }} value="1"> Ya </option>
+                        <option {{ old('is_transport_company_owner') === "0" ? 'selected' : '' }} value="0"> Tidak </option>
                     </select>
                 </div>
             </div>
 
             <div class="field">
-                <label for="public_transport_usage_duration" class="label"> Sudah berapa lama menggunakan angkutan umum: </label>
+                <label for="position_in_company" class="label"> Jabatan dalam Perusahaan: </label>
                 <div class="control">
-                    <input placeholder="Sudah berapa lama menggunakan angkutan umum" value="{{ old('public_transport_usage_duration') }}" type="text" name="public_transport_usage_duration" class="input {{ $errors->first("public_transport_usage_duration", "is-danger") }}">
+                    <input placeholder="Jabatan dalam Perusahaan:" value="{{ old('position_in_company') }}" type="text" name="position_in_company" class="input {{ $errors->first("position_in_company", "is-danger") }}">
                 </div>
-                @if($errors->has("public_transport_usage_duration"))
-                <p class="help is-danger"> {{ $errors->first("public_transport_usage_duration") }} </p>
+                @if($errors->has("position_in_company"))
+                <p class="help is-danger"> {{ $errors->first("position_in_company") }} </p>
                 @endif
             </div>
 
-           <div class="field">
-               <label for="public_transport_usage_purpose" class="label"> Untuk Keperluan apa menggunakan angkutan umum: </label>
-               <div class="control">
-                   <textarea placeholder="Untuk Keperluan apa menggunakan angkutan umum" type="text" name="public_transport_usage_purpose" class="textarea {{ $errors->first("public_transport_usage_purpose", "is-danger") }}">{{ old('public_transport_usage_purpose') }}</textarea>
-               </div>
-               @if($errors->has("public_transport_usage_purpose"))
-               <p class="help is-danger"> {{ $errors->first("public_transport_usage_purpose") }} </p>
-               @endif
-           </div>
-
-           <div class="field">
-               <label for="desired_public_transport_type" class="label"> Kriteria jenis angkutan umum bagaimana yang anda harapkan: </label>
-               <div class="control">
-                   <textarea placeholder="Kriteria jenis angkutan umum bagaimana yang anda harapkan" type="text" name="desired_public_transport_type" class="textarea {{ $errors->first("desired_public_transport_type", "is-danger") }}">{{ old('desired_public_transport_type') }}</textarea>
-               </div>
-               @if($errors->has("desired_public_transport_type"))
-               <p class="help is-danger"> {{ $errors->first("desired_public_transport_type") }} </p>
-               @endif
-           </div>
-           
-           <div class="field">
-               <label for="public_transport_disuse_reason" class="label"> Jika “Tidak”, apa alasan Bapak/Ibu tidak/belum menggunakan moda angkutan umum: </label>
-               <div class="control">
-                   <textarea placeholder="Jika “Tidak”, apa alasan Bapak/Ibu tidak/belum menggunakan moda angkutan umum" type="text" name="public_transport_disuse_reason" class="textarea {{ $errors->first("public_transport_disuse_reason", "is-danger") }}">{{ old('public_transport_disuse_reason') }}</textarea>
-               </div>
-               @if($errors->has("public_transport_disuse_reason"))
-               <p class="help is-danger"> {{ $errors->first("public_transport_disuse_reason") }} </p>
-               @endif
-           </div>
         </div>
 
         @include('response.shared.survey_form_create')
