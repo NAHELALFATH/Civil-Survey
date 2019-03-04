@@ -20,6 +20,7 @@
             <p class="menu-label">
               Master Data
             </p>
+            
             <ul class="menu-list">
               <li>
                 @foreach (App\Enums\RespondentType::toArray() as $res_type)
@@ -32,6 +33,18 @@
                   {{ App\Enums\RespondentType::NAMES[$res_type] }}
                 </a>
                 @endforeach
+              </li>
+            </ul>
+
+            <p class="menu-label">
+                Respon Survey
+              </p>
+  
+            <ul class="menu-list">
+              <li>
+                <a class="{{ Route::is('response.index') ? 'is-active' : '' }}" href="{{ route('response.index') }}">
+                  Respon Survey
+                </a>
               </li>
             </ul>
             @endauth

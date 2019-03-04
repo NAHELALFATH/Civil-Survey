@@ -24,6 +24,19 @@ class ResponseController extends Controller
         return $respondent_type;
     }
 
+    public function index()
+    {
+        $responses = SurveyResponse::query()
+            ->select(
+                'responses.respondent_name', 'responses.respondent_sex',
+                'responses.respondent_age', 'responses.respondent_address',
+                'responses.extra_data_type'
+            )
+            ->get();
+
+        return view('response.index', compact('responses'));
+    }
+
     public function create()
     {
         $respondent_type = $this->getRespondentType();
