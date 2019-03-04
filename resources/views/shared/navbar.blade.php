@@ -12,10 +12,19 @@
             </a>
         </div>
         
-        <div id="navbar" class="navbar-menu">            
+        <div id="navbar" class="navbar-menu">
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
+                        @auth
+                        <form method="POST" class="d:i-b" action="{{ route('logout') }}">
+                            @csrf
+                            <button class="button is-danger">
+                                Log Out
+                                <i class="fa fa-sign-out"></i>
+                            </button>
+                        </form>
+                        @endauth
                     </div>
                 </div>
             </div>

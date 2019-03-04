@@ -8,6 +8,11 @@ use App\Type;
 
 class CriterionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(Type $type)
     {
         $respondent_type = $type->respondent_type;

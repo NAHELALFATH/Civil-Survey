@@ -15,6 +15,8 @@
         <div class="columns">
           <div class="column is-3 p-r:7" style="position: sticky; top: 0rem">
           <aside class="menu" id="sidebar" style="position: sticky; top: 6rem">
+            
+            @auth
             <p class="menu-label">
               Master Data
             </p>
@@ -32,6 +34,7 @@
                 @endforeach
               </li>
             </ul>
+            @endauth
 
             <p class="menu-label">
               Formulir Survey

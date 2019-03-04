@@ -2,7 +2,7 @@
 @section('title', 'Login')
 @section('content')
 
-<div class="container p-x:5 m-y:5" style="max-width: 40%">
+<div class="container-fluid m-b:5" style="max-width: 30rem">
     <div class="card">
         <div class="card-header">
             <h1 class="card-header-title">
