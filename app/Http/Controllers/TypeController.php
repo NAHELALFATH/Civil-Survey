@@ -61,7 +61,7 @@ class TypeController extends Controller
     
     public function edit(Type $type)
     {
-        $respondent_type = $this->getRespondentType();
+        $respondent_type = $type->respondent_type;
         return view('type.edit', compact('respondent_type', 'type'));
     }
     

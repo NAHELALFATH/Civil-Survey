@@ -6,31 +6,26 @@
     @include('shared.message')
     <nav class="breadcrumb box" aria-label="breadcrumbs">
         <ul>
-            <a href="#">
+            <li class="is-active">
+                <a href="#">
                     Master Data
                 </a>
             </li>
 
-            <li class="is-active">
-                <a href="">
-                    {{ App\Enums\RespondentType::NAMES[$type->respondent_type] }}
+            <li>
+                <a href="{{ route("master.type.index", compact("respondent_type")) }}">
+                    {{ App\Enums\RespondentType::NAMES[$respondent_type] }}
                 </a>
             </li>
-            
+
             <li>
-                <a href="{{ route('master.type.index', ['respondent_type' => $type->respondent_type]) }}">
+                <a href="{{ route('master.criterion.index', $type) }}">
                     Tipe {{ $type->name }}
-                </a>
-            </li>
-            
-            <li>
-                <a href="{{ route('master.criterion.index', $type) }}" aria-current="page">
-                    Kriteria
                 </a>
             </li>
 
             <li class="is-active">
-                <a href="{{ route('master.criterion.create', $type) }}" aria-current="page">
+                <a href="#">
                     Tambah Kriteria
                 </a>
             </li>

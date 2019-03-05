@@ -12,13 +12,11 @@
                 </a>
             </li>
 
-            <li class="is-active">
-                <a href="">
+            <li>
+                <a href="{{ route("master.type.index", compact("respondent_type")) }}">
                     {{ App\Enums\RespondentType::NAMES[$respondent_type] }}
                 </a>
             </li>
-
-            <li class="is-active"><a href="{{ route('master.type.index') }}" aria-current="page"> Tipe </a></li>
         </ul>
     </nav>
 
@@ -27,7 +25,7 @@
     </h1>
 
     <div class="t-a:r m-y:3">
-        <a href="{{ route('master.type.create') }}" class="button is-small is-dark">
+        <a href="{{ route('master.type.create', compact("respondent_type")) }}" class="button is-small is-dark">
             <span>
                 Tambah Tipe
             </span>

@@ -12,21 +12,15 @@
                 </a>
             </li>
 
-            <li class="is-active">
-                <a href="">
-                    {{ App\Enums\RespondentType::NAMES[$type->respondent_type] }}
-                </a>
-            </li>
-            
             <li>
-                <a href="{{ route('master.type.index', ['respondent_type' => $type->respondent_type]) }}">
-                    Tipe {{ $type->name }}
+                <a href="{{ route("master.type.index", compact("respondent_type")) }}">
+                    {{ App\Enums\RespondentType::NAMES[$respondent_type] }}
                 </a>
             </li>
 
-            <li class="is-active">
-                <a href="{{ route('master.criterion.index', $type) }}" aria-current="page">
-                    Kriteria
+            <li>
+                <a href="{{ route('master.criterion.index', $type) }}">
+                    Tipe {{ $type->name }}
                 </a>
             </li>
         </ul>

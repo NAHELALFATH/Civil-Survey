@@ -42,6 +42,15 @@ Route::group(['prefix' => '/sub-criterion', 'as' => 'master.sub-criterion.'], fu
     Route::post('/delete/{sub_criterion}', 'SubCriterionController@delete')->name('delete');
 });
 
+Route::group(['prefix' => '/alternative', 'as' => 'master.alternative.'], function() {
+    Route::get('/{sub_criterion}/index', 'AlternativeController@index')->name('index');
+    Route::get('/{sub_criterion}/create', 'AlternativeController@create')->name('create');
+    Route::post('/{sub_criterion}/store', 'AlternativeController@store')->name('store');
+    Route::get('/edit/{alternative}', 'AlternativeController@edit')->name('edit');
+    Route::post('/update/{alternative}', 'AlternativeController@update')->name('update');
+    Route::post('/delete/{alternative}', 'AlternativeController@delete')->name('delete');
+});
+
 Route::group(['prefix' => '/survey-form', 'as' => 'survey-form.'], function() {
     Route::get('/show', 'SurveyFormController@show')->name('show');
 });
