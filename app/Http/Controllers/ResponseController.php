@@ -10,6 +10,7 @@ use App\Response as SurveyResponse;
 use App\PublicTransportUserResponse;
 use App\SurveyData;
 use App\PublicTransportOperatorResponse;
+use App\PublicTransportRegulatorResponse;
 
 class ResponseController extends Controller
 {
@@ -63,6 +64,7 @@ class ResponseController extends Controller
                 break;
             }
             case RespondentType::public_transport_regulator(): {
+                return view('response.public_transport_regulator.create', compact('types', 'respondent_type'));
                 break;
             }
         }
@@ -113,6 +115,14 @@ class ResponseController extends Controller
                 break;
             }
             case RespondentType::public_transport_regulator(): {
+                $validator->addRules([
+                    "department" => "required|string",
+                    "position" => "required|string",
+                    "department_authority_level" => "required|string",
+                    "difficulties_in_public_trans_impl" => "required|string",
+                    "wishes_recommendations_for_impl" => "required|string",
+                    "recommended_public_trans_type" => "required|string",
+                ]);
                 break;
             }
         } 
@@ -164,6 +174,17 @@ class ResponseController extends Controller
                         "difficulties_in_operation",
                         "wish_and_recommendations",
                         "desired_types_of_public_transport",
+                    ])->toArray());
+                    break;
+                }
+                case RespondentType::public_transport_regulator(): {
+                    $extra_data = PublicTransportRegulatorResponse::create($data->only([
+                        "department",
+                        "position",
+                        "department_authority_level",
+                        "difficulties_in_public_trans_impl",
+                        "wishes_recommendations_for_impl",
+                        "recommended_public_trans_type",
                     ])->toArray());
                     break;
                 }
