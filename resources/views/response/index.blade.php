@@ -47,5 +47,8 @@
             @endforeach
         </tbody>
     </table>
+
+    {{ $responses->links() }}
+
 </div>
 @endsection

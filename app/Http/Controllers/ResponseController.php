@@ -33,7 +33,7 @@ class ResponseController extends Controller
                 'responses.respondent_age', 'responses.respondent_address',
                 'responses.extra_data_type'
             )
-            ->get();
+            ->paginate(20);
 
         return view('response.index', compact('responses'));
     }
