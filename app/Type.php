@@ -10,8 +10,15 @@ class Type extends Model
         'respondent_type', 'name'
     ];
 
+    protected $appends = ['is_deletable'];
+
     public function criteria()
     {
         return $this->hasMany(Criterion::class);
+    }
+
+    public function getIsDeletableAttribute()
+    {
+        return $this->criteria_count === 0;
     }
 }

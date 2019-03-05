@@ -17,5 +17,6 @@ return [
         'failure' => 'Data gagal dihapus.',
     ],
 
-    "survey_finished" => "Selamat, data survey Anda telah terkirim."
+    "survey_finished" => "Selamat, data survey Anda telah terkirim.",
+    "no_data" => "Belum terdapat data sama sekali."
 ];

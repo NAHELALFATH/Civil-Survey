@@ -26,7 +26,18 @@
         Tipe
     </h1>
 
-    <table class="table is-bordered">
+    <div class="t-a:r m-y:3">
+        <a href="{{ route('master.type.create') }}" class="button is-small is-dark">
+            <span>
+                Tambah Tipe
+            </span>
+            <span class="icon is-small">
+                <i class="fa fa-plus"></i>
+            </span>
+        </a>
+    </div>
+
+    <table class="table is-bordered is-fullwidth">
         <thead>
             <tr>
                 <th> No. </th>
@@ -50,8 +61,18 @@
                         </span>
                     </a>
 
+                    <a href="{{ route('master.type.edit', $type) }}" class="button is-dark is-small">
+                        <span>
+                            Edit
+                        </span>
+                        <span class="icon is-small">
+                            <i class="fa fa-pencil"></i>
+                        </span>
+                    </a>
+
+                    @if($type->is_deletable)
                     <form
-                        class="d:i-b"
+                        class="m-l:3 d:i-b"
                         action="{{ route('master.type.delete', $type) }}"
                         method="POST"
                     >
@@ -65,10 +86,22 @@
                             </span>
                         </button>
                     </form>
+                    @endif
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
+
+    @if($types->count() == 0)
+    <article class="message is-warning">
+        <div class="message-body">
+            <i class="fa fa-warning"></i>
+            @lang("messages.no_data")
+        </div>
+    </article>
+    @endif
+
+
 </div>
 @endsection
