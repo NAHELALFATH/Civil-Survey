@@ -52,4 +52,7 @@ Route::group(['prefix' => '/response', 'as' => 'response.'], function() {
     Route::post('/store', 'ResponseController@store')->name('store');
 });
 
-Route::redirect('/', '/type/index');
+Route::get('/', function () {
+    return redirect()
+        ->route('response.create');
+});
