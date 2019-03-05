@@ -20,8 +20,12 @@
                         <form method="POST" class="d:i-b" action="{{ route('logout') }}">
                             @csrf
                             <button class="button is-danger">
-                                Log Out
-                                <i class="fa fa-sign-out"></i>
+                                <span>
+                                    Log Out
+                                </span>
+                                <span class="icon is-small">
+                                    <i class="fa fa-sign-out"></i>
+                                </span>
                             </button>
                         </form>
                         @endauth
