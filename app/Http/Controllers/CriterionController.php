@@ -56,7 +56,7 @@ class CriterionController extends Controller
     public function update(Criterion $criterion)
     {
         $data = $this->validate(request(), [
-            "name" => "required|string|unique:criteria"
+            "name" => ["required", "string", Rule::unique("criteria")->ignore($criterion)]
         ]);
     }
     
