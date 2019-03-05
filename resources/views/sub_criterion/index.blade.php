@@ -39,7 +39,18 @@
         Sub Kriteria
     </h1>
 
-    <table class="table is-bordered">
+    <div class="t-a:r m-y:3">
+        <a href="{{ route('master.sub-criterion.create', $criterion) }}" class="button is-small is-dark">
+            <span>
+                Tambah Sub Kriteria
+            </span>
+            <span class="icon is-small">
+                <i class="fa fa-plus"></i>
+            </span>
+        </a>
+    </div>
+
+    <table class="table is-bordered is-fullwidth">
         <thead>
             <tr>
                 <th> No. </th>
@@ -52,7 +63,21 @@
             <tr>
                 <td> {{ $loop->iteration }}. </td>
                 <td> {{ $sub_criterion->name }} </td>
-                <td>  </td>
+                <td>
+                    @if($sub_criterion->is_deletable)
+                    <form method='POST' action='{{ route('master.sub-criterion.delete', $sub_criterion) }}'>
+                        @csrf
+                        <button class="button is-danger is-small">
+                            <span>
+                                Hapus
+                            </span>
+                            <span class="icon is-small">
+                                <i class="fa fa-trash"></i>
+                            </span>
+                        </button>
+                    </form>
+                    @endif
+                </td>
             </tr>
             @endforeach
         </tbody>

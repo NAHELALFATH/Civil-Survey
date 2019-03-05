@@ -37,9 +37,9 @@ Route::group(['prefix' => '/sub-criterion', 'as' => 'master.sub-criterion.'], fu
     Route::get('/{criterion}/index', 'SubCriterionController@index')->name('index');
     Route::get('/{criterion}/create', 'SubCriterionController@create')->name('create');
     Route::post('/{criterion}/store', 'SubCriterionController@store')->name('store');
-    Route::get('/edit/{sub-criterion}', 'SubCriterionController@edit')->name('edit');
-    Route::post('/update/{sub-criterion}', 'SubCriterionController@update')->name('update');
-    Route::post('/delete/{sub-criterion}', 'SubCriterionController@delete')->name('delete');
+    Route::get('/edit/{sub_criterion}', 'SubCriterionController@edit')->name('edit');
+    Route::post('/update/{sub_criterion}', 'SubCriterionController@update')->name('update');
+    Route::post('/delete/{sub_criterion}', 'SubCriterionController@delete')->name('delete');
 });
 
 Route::group(['prefix' => '/survey-form', 'as' => 'survey-form.'], function() {

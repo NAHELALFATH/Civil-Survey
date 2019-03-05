@@ -30,10 +30,23 @@
 
         <tbody>
             @foreach ($criterion->sub_criteria as $sub_criterion)
+
+            @php
+                if ($sub_criterion->alternatives->count() > 0) {
+                    $rowspan = $sub_criterion->alternatives->count();
+                    $first_alternative = $sub_criterion->alternatives->first();
+                }
+                else {
+                    $rowspan = 1;
+                    $first_alternative = new App\Alternative();
+                    $first_alternative->name = "-";
+                }
+            @endphp
+
             <tr>
-                <td rowspan="{{ $sub_criterion->alternatives->count() }}"> {{ $loop->iteration }}. </td>
-                <td rowspan="{{ $sub_criterion->alternatives->count() }}"> {{ $sub_criterion->name }}. </td>
-                <td rowspan="1"> {{ $sub_criterion->alternatives->first()->name }} </td>
+                <td rowspan="{{ $rowspan }}"> {{ $loop->iteration }}. </td>
+                <td rowspan="{{ $rowspan }}"> {{ $sub_criterion->name }}. </td>
+                <td rowspan="1"> {{ $first_alternative->name }} </td>
                 <td rowspan="1">
                     <div class="select">
                         <select name="survey_data[{{ $counter }}][rating]">
@@ -52,7 +65,7 @@
                 <input type="hidden" name="survey_data[{{ $counter }}][type_id]" value="{{ $type->id }}">
                 <input type="hidden" name="survey_data[{{ $counter }}][criterion_id]" value="{{ $criterion->id }}">
                 <input type="hidden" name="survey_data[{{ $counter }}][sub_criterion_id]" value="{{ $sub_criterion->id }}">
-                <input type="hidden" name="survey_data[{{ $counter }}][alternative_id]" value="{{ $sub_criterion->alternatives->first()->id }}">
+                <input type="hidden" name="survey_data[{{ $counter }}][alternative_id]" value="{{ $first_alternative->id }}">
 
                 @php ++$counter @endphp
             </tr>

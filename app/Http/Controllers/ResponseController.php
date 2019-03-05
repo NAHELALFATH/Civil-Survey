@@ -137,7 +137,7 @@ class ResponseController extends Controller
             "survey_data.*.type_id" => "required",
             "survey_data.*.criterion_id" => "required",
             "survey_data.*.sub_criterion_id" => "required",
-            "survey_data.*.alternative_id" => "required"
+            "survey_data.*.alternative_id" => "nullable"
         ]);
 
         $data = collect($validator->validate());
