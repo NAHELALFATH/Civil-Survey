@@ -15,6 +15,7 @@ return [
     'delete' => [
         'success' => 'Data berhasil dihapus.',
         'failure' => 'Data gagal dihapus.',
-    ]
+    ],
 
+    "survey_finished" => "Selamat, data survey Anda telah terkirim."
 ];

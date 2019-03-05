@@ -181,6 +181,8 @@ class ResponseController extends Controller
             }
         });
 
-        return back();
+        return back()
+            ->with("message_state", "success")
+            ->with("message", __("messages.survey_finished"));
     }
 }
