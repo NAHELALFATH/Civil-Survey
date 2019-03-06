@@ -81,15 +81,15 @@ class ResponseController extends Controller
                 
                 $validator->addRules([
                     "respondent_occupation" => "required",
-                    "respondent_monthly_revenue" => "required",
+                    "respondent_monthly_revenue" => "required|numeric|bail|gte:1",
                     "is_public_transport_user" => "required",
                 ]);
 
-                $validator->sometimes([
-                    "public_transport_usage_duration",
-                    "public_transport_usage_purpose",
-                    "desired_public_transport_type"
-                ], ["required"], function ($input) {
+                $validator->sometimes(["public_transport_usage_purpose", "desired_public_transport_type"], "required|string", function ($input) {
+                    return $input->is_public_transport_user == 1;
+                });
+
+                $validator->sometimes("public_transport_usage_duration", "required|string", function ($input) {
                     return $input->is_public_transport_user == 1;
                 });
 
@@ -106,8 +106,8 @@ class ResponseController extends Controller
                     "respondent_occupation" => "required|string",
                     "is_transport_company_owner" => "required|boolean",
                     "position_in_company" => "required|string",
-                    "duration_in_business" => "required|gte:1",
-                    "company_monthly_revenue" => "required|gte:1",
+                    "duration_in_business" => "required|numeric|bail|gte:1",
+                    "company_monthly_revenue" => "required|numeric|bail|gte:1",
                     "difficulties_in_operation" => "required|string",
                     "wish_and_recommendations" => "nullable|string",
                     "desired_types_of_public_transport" => "nullable|string",
@@ -130,7 +130,7 @@ class ResponseController extends Controller
         $validator->addRules([
             "respondent_name" => "required",
             "respondent_sex" => "required",
-            "respondent_age" => "required|numeric|lte:120",
+            "respondent_age" => "required|numeric|bail|lte:120",
             "respondent_address" => "required",
             "survey_data" => "required",
             "survey_data.*.rating" => "required|string",
