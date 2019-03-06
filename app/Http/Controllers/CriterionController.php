@@ -58,6 +58,11 @@ class CriterionController extends Controller
         $data = $this->validate(request(), [
             "name" => ["required", "string", Rule::unique("criteria")->ignore($criterion)]
         ]);
+
+        $criterion->update($data);
+        return back()
+            ->with("message_state", "success")
+            ->with("message", __("messages.update.success"));
     }
     
     public function delete(Criterion $criterion)
@@ -65,6 +70,6 @@ class CriterionController extends Controller
         $criterion->delete();
         return back()
             ->with("message_state", "success")
-            ->with("message", "messages.delete.success");
+            ->with("message", __("messages.delete.success"));
     }
 }

@@ -69,6 +69,15 @@
                 <td> {{ $loop->iteration }}. </td>
                 <td> {{ $alternative->name }} </td>
                 <td>
+                    <a href="{{ route("master.alternative.edit", $alternative) }}" class="button is-dark is-small">
+                        <span>
+                            Edit
+                        </span>
+                        <span class="icon is-small">
+                            <i class="fa fa-pencil"></i>
+                        </span>
+                    </a>
+
                     @if($alternative->is_deletable)
                     <form method='POST' action='{{ route('master.alternative.delete', $alternative) }}'>
                         @csrf

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Criterion;
 use App\SubCriterion;
+use Illuminate\Validation\Rule;
 
 class SubCriterionController extends Controller
 {
@@ -50,10 +51,21 @@ class SubCriterionController extends Controller
     
     public function edit(SubCriterion $sub_criterion)
     {
+        $respondent_type = $sub_criterion->criterion->type->respondent_type;
+        return view("sub_criterion.edit", compact("respondent_type", "sub_criterion"));
     }
     
     public function update(SubCriterion $sub_criterion)
     {
+        $data = $this->validate(request(), [
+            "name" => ["required", "string", Rule::unique("sub_criteria")->ignore($sub_criterion)]
+        ]);
+
+        $sub_criterion->update($data);
+
+        return back()
+            ->with("message_state", "success")
+            ->with("message", __("messages.update.success"));
     }
     
     public function delete(SubCriterion $sub_criterion) {

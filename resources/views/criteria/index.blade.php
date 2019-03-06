@@ -74,7 +74,7 @@
                     </a>
 
                     @if($criterion->is_deletable)
-                    <form class="d:i-b" method="POST" action="{{ route('master.criterion.delete', $criterion) }}">
+                    <form class="m-l:3 d:i-b" method="POST" action="{{ route('master.criterion.delete', $criterion) }}">
                         @csrf
                         <button class="button is-danger is-small">
                             <span>

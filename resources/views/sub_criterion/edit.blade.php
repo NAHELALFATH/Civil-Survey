@@ -37,12 +37,6 @@
                     Alternatif
                 </a>
             </li>
-
-            <li class="is-active">
-                <a href="#">
-                    Edit
-                </a>
-            </li>
         </ul>
     </nav>
 
@@ -50,25 +44,14 @@
         Alternatif
     </h1>
 
-    <div class="t-a:r m-y:3">
-        <a href="{{ route('master.alternative.create', $sub_criterion) }}" class="button is-small is-dark">
-            <span>
-                Tambah Alternatif
-            </span>
-            <span class="icon is-small">
-                <i class="fa fa-plus"></i>
-            </span>
-        </a>
-    </div>
-
     <div class="box">
-        <form action="{{ route('master.alternative.update', $alternative) }}" method="POST">
+        <form action="{{ route('master.sub-criterion.update', $sub_criterion) }}" method="POST">
             @csrf
 
             <div class="field">
-                <label for="name" class="label"> Nama Alternatif: </label>
+                <label for="name" class="label"> Nama Sub Kriteria: </label>
                 <div class="control">
-                    <input placeholder="Nama Sub Kriteria" value="{{ old('name', $alternative->name) }}" type="text" name="name" class="input {{ $errors->first("name", "is-danger") }}">
+                    <input placeholder="Nama Sub Kriteria" value="{{ old('name', $sub_criterion->name) }}" type="text" name="name" class="input {{ $errors->first("name", "is-danger") }}">
                 </div>
                 @if($errors->has("name"))
                 <p class="help is-danger"> {{ $errors->first("name") }} </p>
@@ -78,7 +61,7 @@
             <div class="t-a:r">
                 <button class="button is-primary is-small">
                     <span>
-                        Ubah Alternatif
+                        Ubah Sub Kriteria
                     </span>
                     <span class="icon is-small">
                         <i class="fa fa-pencil"></i>

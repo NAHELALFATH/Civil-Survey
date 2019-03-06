@@ -70,8 +70,17 @@
                         </span>
                     </a>
 
+                    <a href="{{ route("master.sub-criterion.edit", $sub_criterion) }}" class="button is-dark is-small">
+                        <span>
+                            Edit
+                        </span>
+                        <span class="icon is-small">
+                            <i class="fa fa-pencil"></i>
+                        </span>
+                    </a>
+
                     @if($sub_criterion->is_deletable)
-                    <form method='POST' action='{{ route('master.sub-criterion.delete', $sub_criterion) }}'>
+                    <form method='POST' class="is-inline-block m-l:3" action='{{ route('master.sub-criterion.delete', $sub_criterion) }}'>
                         @csrf
                         <button class="button is-danger is-small">
                             <span>

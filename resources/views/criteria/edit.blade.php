@@ -37,7 +37,7 @@
     </h1>
 
     <div class="box">
-        <form action="{{ route('master.criterion.update', $criterion->type) }}" method="POST">
+        <form action="{{ route('master.criterion.update', $criterion) }}" method="POST">
             @csrf
 
             <div class="field">
