@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Alternative extends Model
 {
     public $fillable = [
-        "name"
+        "name", "sub_criterion_id"
     ];
+
+    public $appends = ["is_deletable"];
 
     public function survey_datas()
     {
@@ -20,8 +22,8 @@ class Alternative extends Model
         return $this->belongsTo(SubCriterion::class);
     }
 
-    public function getIsDeleteableAttribute()
+    public function getIsDeletableAttribute()
     {
-        $this->survey_data_count === 0;
+        return $this->survey_datas_count === 0;
     }
 }

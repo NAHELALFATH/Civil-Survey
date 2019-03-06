@@ -80,8 +80,9 @@
                     </a>
 
                     @if($sub_criterion->is_deletable)
-                    <form method='POST' class="is-inline-block m-l:3" action='{{ route('master.sub-criterion.delete', $sub_criterion) }}'>
+                    <form method='POST' class="d:i-b m-l:3" action='{{ route('master.sub-criterion.delete', $sub_criterion) }}'>
                         @csrf
+
                         <button class="button is-danger is-small">
                             <span>
                                 Hapus

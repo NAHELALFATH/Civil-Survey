@@ -79,7 +79,7 @@
                     </a>
 
                     @if($alternative->is_deletable)
-                    <form method='POST' action='{{ route('master.alternative.delete', $alternative) }}'>
+                    <form class="d:i-b m-l:3" method='POST' action='{{ route('master.alternative.delete', $alternative) }}'>
                         @csrf
                         <button class="button is-danger is-small">
                             <span>

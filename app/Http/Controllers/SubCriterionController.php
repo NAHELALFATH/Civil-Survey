@@ -58,7 +58,7 @@ class SubCriterionController extends Controller
     public function update(SubCriterion $sub_criterion)
     {
         $data = $this->validate(request(), [
-            "name" => ["required", "string", Rule::unique("sub_criteria")->ignore($sub_criterion)]
+            "name" => ["required", "string"]
         ]);
 
         $sub_criterion->update($data);
